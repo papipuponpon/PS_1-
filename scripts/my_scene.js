@@ -14,6 +14,7 @@ class MyScene extends Phaser.Scene {
         this.load.image('background', 'assets/background.png');
         this.load.image('taro', 'assets/taro.png');
         this.load.image('jiro', 'assets/jiro.png');
+        this.load.image('hanako', 'assets/hanako.png');
     }
 
     // シーン初期化処理
@@ -32,6 +33,7 @@ class MyScene extends Phaser.Scene {
         this.keys.keyD = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
         this.helloText = this.add.text(100, 50, '');
         this.heyText = this.add.text(100, 50, '');
+        this.keys.keyW = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W);
     }
     
   // 毎フレーム実行される繰り返し処理
@@ -73,14 +75,20 @@ class MyScene extends Phaser.Scene {
         // }
 
         //演習1-6
-        if(this.keys.keyA.isDown){
-            this.helloText.setText('Hello!');
-        }else if(this.keys.keyS.isDown){
-            this.heyText.setText('Hey!');
-        }else if(this.keys.keyD.isDown){
-            this.helloText.setText('');
-            this.heyText.setText('');
-        }
+        // if(this.keys.keyA.isDown){
+        //     this.helloText.setText('Hello!');
+        // }else if(this.keys.keyS.isDown){
+        //     this.heyText.setText('Hey!');
+        // }else if(this.keys.keyD.isDown){
+        //     this.helloText.setText('');
+        //     this.heyText.setText('');
+        // }
+
+        //演習1-7
+        if(this.keys.keyW.isDown){
+            let randx = Phaser.Math.Between(100, 400);
+             this.hanako = this.add.image(randx, 100, 'hanako');
+         }
     }
             
 }
