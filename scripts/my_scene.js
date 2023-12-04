@@ -136,6 +136,7 @@ class MyScene extends Phaser.Scene {
         function collision_detection() {
             this.hanakoDel = true;
             this.add.text(100, 150, '痛い！',);
+            this.physics.pause();
         }
     }
             
